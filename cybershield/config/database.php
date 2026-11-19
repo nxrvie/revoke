@@ -12,7 +12,8 @@ define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : ''); // XAMP
 /* Deux modes :
    - sqlite : fichier database.sqlite fourni (Render / démo / tests, zéro configuration)
    - mysql  : base MySQL classique (XAMPP) — variables d'environnement possibles */
-$sqliteFile = __DIR__ . '/../database.sqlite';
+$envSqlite = getenv('DB_SQLITE_FILE');
+$sqliteFile = $envSqlite ?: (__DIR__ . '/../database.sqlite');
 $envDriver = getenv('DB_DRIVER');
 define('DB_DRIVER', $envDriver ?: (file_exists($sqliteFile) ? 'sqlite' : 'mysql'));
 define('DB_SQLITE_FILE', $sqliteFile);
