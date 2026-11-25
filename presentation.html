@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="CyberShield — Présentation du plan d'affaires selon le modèle de l'étude, par Siwar Hbibi et Marwa Mejri, classe 2TSGI 2.">
 <title>CyberShield — Plan d'affaires · Présentation</title>
+<script>document.documentElement.classList.add('js');</script>
 <style>
 /* ============================================================
    CyberShield — Présentation du plan d'affaires
@@ -19,13 +20,24 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(800px 500px at 90% -5%,rgba(45,212,191,.10),transparent 60%),radial-gradient(700px 500px at -10% 40%,rgba(96,165,250,.08),transparent 60%)}
+body::before{content:"";position:fixed;inset:-20%;z-index:0;pointer-events:none;background:radial-gradient(800px 500px at 90% -5%,rgba(45,212,191,.12),transparent 60%),radial-gradient(700px 500px at -10% 40%,rgba(96,165,250,.10),transparent 60%),radial-gradient(600px 400px at 60% 110%,rgba(167,139,250,.07),transparent 60%);animation:drift 24s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:linear-gradient(rgba(45,212,191,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 70%)}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-2%,2%,0) scale(1.06)}}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(45,212,191,.35)}50%{box-shadow:0 0 0 8px rgba(45,212,191,0)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes riseSoft{from{opacity:.35;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
 a{color:var(--cyan);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 
 /* Top bar */
-.top{position:sticky;top:0;z-index:20;background:rgba(6,11,22,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--soft)}
+.top{position:sticky;top:0;z-index:20;background:rgba(6,11,22,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--soft);transition:background .3s,box-shadow .3s}
+.top.scrolled{background:rgba(6,11,22,.94);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,transparent,var(--cyan),var(--blue),transparent);opacity:.35}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:40;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet));box-shadow:0 0 12px rgba(45,212,191,.6);transition:width .12s linear}
 .top-in{display:flex;align-items:center;gap:18px;min-height:68px}
 .brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
 .brand:hover{text-decoration:none}
@@ -105,6 +117,51 @@ td.r,th.r{text-align:right}
 .big{font-size:26px;font-weight:850;color:var(--cyan);letter-spacing:-.02em}
 .pill{display:inline-block;padding:3px 9px;border-radius:20px;background:rgba(45,212,191,.12);color:var(--cyan);font-size:12px;font-weight:750}
 
+/* ---------- Animations & interactions ---------- */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.visible{opacity:1;transform:translateY(0)}
+.hero .tag{animation:riseSoft .45s ease both,pulse 2.8s ease-in-out 1.2s infinite}
+.hero h1{animation:riseSoft .5s .05s ease both}
+.hero h1 em{background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 7s linear infinite}
+.hero .lead{animation:riseSoft .5s .1s ease both}
+.people .person{animation:riseSoft .5s .16s ease both;transition:transform .3s,box-shadow .3s,border-color .3s}
+.people .person:nth-child(2){animation-delay:.24s}
+.person:hover{transform:translateY(-4px);border-color:rgba(45,212,191,.45);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.avatar{position:relative;overflow:hidden;animation:floaty 5s ease-in-out infinite}
+.avatar::after{content:"";position:absolute;inset:-60%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(25deg);animation:shimmer 4.5s linear infinite}
+.avatar.m{animation-delay:-2.5s}
+.metrics{display:flex;gap:34px;flex-wrap:wrap;margin-top:30px}
+.metrics div{min-width:130px}
+.metrics strong{display:block;font-size:28px;letter-spacing:-.03em;color:var(--cyan);font-variant-numeric:tabular-nums}
+.metrics span{color:var(--dim);font-size:13px}
+.side a.active{position:relative}
+.side a.active::before{content:"";position:absolute;left:-1px;top:20%;height:60%;width:3px;border-radius:3px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:rise .3s ease both}
+.rnum{transition:transform .35s,box-shadow .35s}
+.chapter:hover .rnum{transform:rotate(-6deg) scale(1.06);box-shadow:0 0 26px rgba(45,212,191,.28)}
+.letter{animation:pulse 3.2s ease-in-out infinite}
+.item{position:relative;transition:transform .3s,box-shadow .3s,border-color .3s}
+.item::before{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transform:scaleX(.3);transition:opacity .3s,transform .4s}
+.item:hover{transform:translateY(-4px);border-color:rgba(45,212,191,.34);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.item:hover::before{opacity:.85;transform:scaleX(1)}
+.table-wrap table tbody tr{transition:background .2s}
+.table-wrap table tbody tr:hover{background:rgba(45,212,191,.06)}
+.table-wrap table tbody td:first-child{transition:padding-left .2s}
+.table-wrap table tbody tr:hover td:first-child{padding-left:18px;color:var(--cyan)}
+.swot div{transition:transform .3s,box-shadow .3s,border-color .3s}
+.swot div:hover{transform:translateY(-4px);border-color:rgba(45,212,191,.4);box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.tl li::before{animation:pulse 3s ease-in-out infinite}
+.tl li{transition:padding-left .25s}
+.tl li:hover{padding-left:32px}
+.btn{transition:transform .2s,border-color .2s,box-shadow .2s,color .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,191,.16)}
+.to-top{position:fixed;right:24px;bottom:24px;z-index:25;width:44px;height:44px;border-radius:12px;border:1px solid rgba(45,212,191,.4);background:#0d1a32;color:var(--cyan);font-size:20px;cursor:pointer;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s,background .2s}
+.to-top.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.to-top:hover{background:rgba(45,212,191,.16)}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1!important;transform:none!important}
+}
+
 footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-size:14px}
 
 @media(max-width:980px){
@@ -122,7 +179,10 @@ footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-siz
   :root{--bg:#fff;--card:#fff;--card2:#fff;--line:#ccc;--soft:#ddd;--text:#0b162b;--muted:#333;--dim:#555}
   body{background:#fff;color:#111;font-size:11px}
   body::before{display:none}
-  .top,.side,.btn{display:none!important}
+  .top,.side,.btn,.progress,.to-top{display:none!important}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1!important;transform:none!important}
+  body::after{display:none}
   .layout{display:block;padding:0}
   .hero{padding:0 0 20px}
   h1{font-size:30px}
@@ -135,6 +195,8 @@ footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-siz
 </style>
 </head>
 <body>
+
+<div class="progress" id="progress"></div>
 
 <header class="top">
   <div class="wrap top-in">
@@ -159,6 +221,11 @@ footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-siz
   <div class="people">
     <div class="person"><div class="avatar">SH</div><div><b>Siwar Hbibi</b><span>Co-fondatrice · Direction &amp; administration</span></div></div>
     <div class="person"><div class="avatar m">MM</div><div><b>Marwa Mejri</b><span>Co-fondatrice · Responsable technique</span></div></div>
+  </div>
+  <div class="metrics">
+    <div><strong class="count" data-to="120000" data-suffix=" DT">0</strong><span>Capital social</span></div>
+    <div><strong class="count" data-to="3">0</strong><span>Rôles applicatifs</span></div>
+    <div><strong class="count" data-to="9">0</strong><span>Chapitres du plan</span></div>
   </div>
 </div>
 
@@ -433,18 +500,82 @@ footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-siz
   <div class="wrap">CyberShield · Siwar Hbibi &amp; Marwa Mejri · Classe 2TSGI 2 · Centre Urbain, Tunis, Tunisie</div>
 </footer>
 
+<button class="to-top" id="toTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
+
 <script>
-// Met en surbrillance le chapitre visible dans le sommaire
 (function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var progress = document.getElementById('progress');
+  var topbar = document.querySelector('.top');
+  var toTop = document.getElementById('toTop');
+
+  /* Sommaire actif + barre de progression + bouton retour en haut */
   var links = Array.prototype.slice.call(document.querySelectorAll('.side a'));
   var sections = links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  var ticking = false;
   function update(){
     var y = window.scrollY + 140, current = sections[0];
     sections.forEach(function(s){ if(s.offsetTop <= y) current = s; });
     links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + current.id); });
+
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    topbar.classList.toggle('scrolled', window.scrollY > 20);
+    toTop.classList.toggle('show', window.scrollY > 600);
+    ticking = false;
   }
-  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('scroll', function(){
+    if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
   update();
+
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:reduced?'auto':'smooth'}); });
+
+  /* Révélation progressive des blocs */
+  var targets = document.querySelectorAll('.item, .ch-head, .swot > div, .tl li, .metrics div');
+  if(reduced || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(targets, function(el){ el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+    Array.prototype.forEach.call(targets, function(el, i){
+      el.classList.add('reveal');
+      el.style.transitionDelay = (Math.min(i % 6, 5) * 55) + 'ms';
+      io.observe(el);
+    });
+  }
+
+  /* Compteurs animés */
+  function animateCount(el){
+    var to = Number(el.dataset.to || 0), suffix = el.dataset.suffix || '', dur = 1100;
+    if(reduced){ el.textContent = to.toLocaleString('fr-FR') + suffix; return; }
+    var start = null;
+    function frame(t){
+      if(!start) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * eased).toLocaleString('fr-FR') + suffix;
+      if(p < 1) window.requestAnimationFrame(frame);
+    }
+    window.requestAnimationFrame(frame);
+  }
+  var counters = document.querySelectorAll('.count');
+  if('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ animateCount(e.target); io2.unobserve(e.target); }
+      });
+    }, {threshold:0.5});
+    Array.prototype.forEach.call(counters, function(el){ io2.observe(el); });
+  } else {
+    Array.prototype.forEach.call(counters, animateCount);
+  }
 })();
 </script>
 </body>
