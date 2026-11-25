@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CyberShield — Présentation du plan d'affaires selon le modèle de l'étude, par Siwar Hbibi et Marwa Mejri, classe 2TSGI 2.">
+<title>CyberShield — Plan d'affaires · Présentation</title>
+<style>
+/* ============================================================
+   CyberShield — Présentation du plan d'affaires
+   Modèle : Chapitre 5 (I à IX) · Fichier autonome
+   ============================================================ */
+:root{
+  --bg:#060b16; --card:#101d36; --card2:#142445; --line:#22375d; --soft:#1a2c4b;
+  --text:#f4f8ff; --muted:#a9bcd8; --dim:#7d95b8;
+  --cyan:#2dd4bf; --blue:#60a5fa; --violet:#a78bfa; --amber:#fbbf24; --green:#34d399;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(800px 500px at 90% -5%,rgba(45,212,191,.10),transparent 60%),radial-gradient(700px 500px at -10% 40%,rgba(96,165,250,.08),transparent 60%)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* Top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(6,11,22,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--soft)}
+.top-in{display:flex;align-items:center;gap:18px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.brand:hover{text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{color:var(--cyan)}
+.top-title{color:var(--muted);font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:9px 15px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.btn:hover{border-color:var(--cyan);color:var(--cyan);text-decoration:none}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start;padding:36px 0 80px}
+.side{position:sticky;top:92px}
+.side h4{font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin:0 0 12px}
+.side ol{list-style:none;margin:0;padding:0;counter-reset:none;display:grid;gap:3px}
+.side a{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:9px;color:var(--muted);font-size:13px;font-weight:650;border:1px solid transparent}
+.side a:hover{background:rgba(255,255,255,.04);color:var(--text);text-decoration:none}
+.side a.active{color:var(--cyan);background:rgba(45,212,191,.10);border-color:rgba(45,212,191,.22)}
+.side .rn{width:24px;color:var(--cyan);font-weight:850;font-size:12px}
+
+/* Hero */
+.hero{padding:58px 0 54px;border-bottom:1px solid var(--soft)}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border-radius:30px;background:rgba(45,212,191,.10);border:1px solid rgba(45,212,191,.3);color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.08em}
+h1{font-size:48px;line-height:1.1;letter-spacing:-.03em;margin:20px 0 14px}
+h1 em{color:var(--cyan);font-style:normal}
+.lead{font-size:19px;color:var(--muted);max-width:760px;margin:0}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px;max-width:760px}
+.person{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.avatar{width:48px;height:48px;flex:none;border-radius:12px;display:grid;place-items:center;font-weight:850;color:#04121d;background:linear-gradient(135deg,var(--cyan),var(--blue))}
+.avatar.m{background:linear-gradient(135deg,var(--violet),var(--blue))}
+.person b{display:block;font-size:17px}
+.person span{color:var(--dim);font-size:13px}
+
+/* Chapters */
+.chapter{padding:52px 0;border-bottom:1px solid var(--soft);scroll-margin-top:90px}
+.ch-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px}
+.rnum{width:52px;height:52px;flex:none;border-radius:14px;display:grid;place-items:center;background:rgba(45,212,191,.13);border:1px solid rgba(45,212,191,.26);color:var(--cyan);font-size:20px;font-weight:850}
+.ch-head h2{font-size:30px;line-height:1.2;letter-spacing:-.02em;margin:2px 0 6px}
+.ch-head p{color:var(--muted);margin:0;font-size:15px}
+.item{background:linear-gradient(160deg,var(--card),#0b162b);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:14px}
+.item-h{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.letter{width:28px;height:28px;flex:none;border-radius:8px;display:grid;place-items:center;background:rgba(96,165,250,.14);color:var(--blue);font-size:13px;font-weight:850}
+.item h3{margin:0;font-size:17px}
+.item p{color:var(--muted);margin:0 0 8px;font-size:15px}
+.item p:last-child{margin-bottom:0}
+.item strong,.item b{color:var(--text)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.note{color:var(--dim);font-size:13px;font-style:italic}
+
+/* Tables */
+.table-wrap{overflow-x:auto;margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;padding:9px 12px;color:var(--dim);font-size:11px;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--soft);color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td b,td strong{color:var(--text)}
+td.r,th.r{text-align:right}
+
+/* SWOT */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.swot div{border-radius:12px;padding:16px;border:1px solid var(--line);background:#0b162b}
+.swot h4{margin:0 0 8px;font-size:14px}
+.swot ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.swot .s h4{color:var(--green)} .swot .w h4{color:var(--amber)}
+.swot .o h4{color:var(--blue)} .swot .t h4{color:var(--red,#fb7185)}
+
+/* Timeline */
+.tl{list-style:none;margin:12px 0 0;padding:0}
+.tl li{position:relative;padding:0 0 16px 26px;border-left:2px solid var(--line)}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(45,212,191,.12)}
+.tl li:last-child{border-color:transparent}
+.tl b{display:block}
+.tl span{color:var(--dim);font-size:13px}
+
+/* Highlight */
+.hl{background:linear-gradient(135deg,rgba(45,212,191,.12),rgba(96,165,250,.09)),var(--card);border:1px solid rgba(45,212,191,.3)}
+.big{font-size:26px;font-weight:850;color:var(--cyan);letter-spacing:-.02em}
+.pill{display:inline-block;padding:3px 9px;border-radius:20px;background:rgba(45,212,191,.12);color:var(--cyan);font-size:12px;font-weight:750}
+
+footer{border-top:1px solid var(--soft);padding:32px 0;color:var(--dim);font-size:14px}
+
+@media(max-width:980px){
+  .layout{grid-template-columns:1fr;gap:24px}
+  .side{position:static}
+  .side ol{display:flex;overflow-x:auto;gap:6px;padding-bottom:6px}
+  .side a{white-space:nowrap}
+  h1{font-size:36px}
+  .grid2,.grid3,.people,.swot{grid-template-columns:1fr}
+}
+@media(max-width:560px){h1{font-size:30px}.ch-head h2{font-size:24px}.top-title{display:none}}
+
+/* Print / PDF */
+@media print{
+  :root{--bg:#fff;--card:#fff;--card2:#fff;--line:#ccc;--soft:#ddd;--text:#0b162b;--muted:#333;--dim:#555}
+  body{background:#fff;color:#111;font-size:11px}
+  body::before{display:none}
+  .top,.side,.btn{display:none!important}
+  .layout{display:block;padding:0}
+  .hero{padding:0 0 20px}
+  h1{font-size:30px}
+  .chapter{break-before:page;padding:20px 0;border:0}
+  .chapter:first-of-type{break-before:auto}
+  .item,.person{break-inside:avoid;background:#fff;border:1px solid #ccc}
+  .hl{background:#f2fbfa}
+  a{color:#0a6e66}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+        <path d="M32 3 8 12v18c0 15 10 27 24 31 14-4 24-16 24-31V12L32 3Z" fill="#0a1730" stroke="url(#g)" stroke-width="2.5"/>
+        <path d="M32 18a9 9 0 0 0-9 9v3h-2a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V32a2 2 0 0 0-2-2h-2v-3a9 9 0 0 0-9-9Zm-5 12v-3a5 5 0 0 1 10 0v3H27Z" fill="url(#g)"/>
+      </svg>
+      <span>Cyber<b>Shield</b></span>
+    </a>
+    <span class="top-title">Plan d'affaires · Modèle de l'étude (Chapitre 5)</span>
+    <button class="btn" onclick="window.print()">⎙ Imprimer / PDF</button>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap hero">
+  <span class="tag">CLASSE 2TSGI 2 · PROJET D'ENTREPRISE</span>
+  <h1>Le plan d'affaires de<br><em>CyberShield</em>, présenté simplement.</h1>
+  <p class="lead">Une société de cybersécurité basée à <b>Tunis, Centre Urbain</b>, et une application web qui rend la sécurité visible. Ce document suit exactement le modèle de l'étude : synthèse, description, équipe, marché, commercialisation, organisation, plan financier, conclusions et annexes.</p>
+  <div class="people">
+    <div class="person"><div class="avatar">SH</div><div><b>Siwar Hbibi</b><span>Co-fondatrice · Direction &amp; administration</span></div></div>
+    <div class="person"><div class="avatar m">MM</div><div><b>Marwa Mejri</b><span>Co-fondatrice · Responsable technique</span></div></div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <aside class="side">
+    <h4>Sommaire</h4>
+    <ol>
+      <li><a href="#ch1"><span class="rn">I</span> Synthèse</a></li>
+      <li><a href="#ch2"><span class="rn">II</span> Description du projet</a></li>
+      <li><a href="#ch3"><span class="rn">III</span> Promoteur &amp; équipe</a></li>
+      <li><a href="#ch4"><span class="rn">IV</span> Analyse du marché</a></li>
+      <li><a href="#ch5"><span class="rn">V</span> Commercialisation</a></li>
+      <li><a href="#ch6"><span class="rn">VI</span> Production &amp; organisation</a></li>
+      <li><a href="#ch7"><span class="rn">VII</span> Plan financier</a></li>
+      <li><a href="#ch8"><span class="rn">VIII</span> Conclusions</a></li>
+      <li><a href="#ch9"><span class="rn">IX</span> Annexes</a></li>
+    </ol>
+  </aside>
+
+  <div>
+
+  <!-- I -->
+  <section class="chapter" id="ch1">
+    <div class="ch-head"><div class="rnum">I</div><div><h2>SYNTHÈSE</h2><p>L'essentiel du projet en sept points.</p></div></div>
+    <div class="item hl"><div class="item-h"><span class="letter">A</span><h3>Promoteur et associés</h3></div><p>Le projet est porté par <b>Siwar Hbibi</b> et <b>Marwa Mejri</b>, deux étudiantes de la classe <b>2TSGI 2</b>. Elles sont co-fondatrices et associées à parts égales dans une SARL au capital de <b>120 000 DT</b>.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Projet</h3></div><p><b>CyberShield</b> est une société de cybersécurité qui protège les entreprises contre les attaques numériques. Elle propose audit, tests d'intrusion, surveillance 24/7, gestion des incidents, conformité et formation — avec une application web qui permet au client de suivre chaque intervention en temps réel.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Implantation</h3></div><p>Siège et équipe opérationnelle à <b>Centre Urbain, Tunis, Tunisie</b>. Les techniciens interviennent dans tout le Grand Tunis et ailleurs en Tunisie sur demande.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Caractéristiques de la société</h3></div><p><b>Forme juridique :</b> SARL · <b>Capital :</b> 120 000 DT · <b>Effectif :</b> 7 personnes · <b>3 rôles applicatifs :</b> Admin, Technicien, Client · <b>Horizon :</b> 2027 – 2029.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Production et marché</h3></div><p>Six prestations de service. Clientèle cible : PME (10–100 postes), banques, santé, logistique et administrations. Chiffre d'affaires prévisionnel : <b>420 000 DT</b> en année 1, <b>820 000 DT</b> en année 3.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">F</span><h3>Moyens de production</h3></div><p>Deux serveurs, cinq postes techniques, un pare-feu, des licences SIEM/EDR et une plateforme web HTML/CSS/JS/PHP/MySQL avec graphiques SVG autonomes.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">G</span><h3>Coût et financement</h3></div><p>Besoin total : <b>120 000 DT</b> — apports personnels 60 000 DT (50 %), emprunt bancaire 40 000 DT (33 %), subvention jeunes entreprises 20 000 DT (17 %).</p></div>
+  </section>
+
+  <!-- II -->
+  <section class="chapter" id="ch2">
+    <div class="ch-head"><div class="rnum">II</div><div><h2>DESCRIPTION DU PROJET</h2><p> Ce que CyberShield fait, pourquoi et comment.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Présentation du projet</h3></div><p>Le projet naît d'un constat : beaucoup d'entreprises tunisiennes ont des outils informatiques mais ni procédure de sécurité, ni visibilité sur les menaces, ni budget pour une grande firme internationale. CyberShield répond par un <b>double produit</b> : une entreprise de services et une plateforme web qui rend ces services visibles et pilotables.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Mission (Produits, Services)</h3></div><div class="table-wrap"><table><thead><tr><th>Service</th><th>Description</th><th class="r">Tarif</th></tr></thead><tbody>
+      <tr><td><b>Audit de sécurité</b></td><td>Cartographie, vulnérabilités, plan de remédiation</td><td class="r">2 500 DT</td></tr>
+      <tr><td><b>Test de pénétration</b></td><td>Simulation d'attaque interne et externe</td><td class="r">3 500 DT</td></tr>
+      <tr><td><b>Surveillance 24/7</b></td><td>Détection et réponse aux incidents</td><td class="r">1 800 DT/mois</td></tr>
+      <tr><td><b>Gestion d'incident</b></td><td>Intervention d'urgence sur site ou à distance</td><td class="r">1 200 DT</td></tr>
+      <tr><td><b>Conformité &amp; RGPD</b></td><td>Registre, documentation, mise en règle</td><td class="r">2 000 DT</td></tr>
+      <tr><td><b>Formation</b></td><td>Sensibilisation du personnel</td><td class="r">900 DT</td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Objectifs</h3></div><div class="grid3">
+      <p><b>10 clients actifs</b> en année 1, 30 en année 3.</p>
+      <p><b>SLA &lt; 4 h</b> en année 1, &lt; 2 h en année 3.</p>
+      <p><b>Satisfaction ≥ 90 %</b> puis ≥ 95 %.</p>
+    </div></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Apports en innovation</h3></div><p>Un <b>portail client</b> qui montre l'avancement de chaque demande, des <b>graphiques générés sans CDN</b> (fonctionnement hors ligne), une séparation claire des trois rôles et une offre locale adaptée au tissu économique tunisien.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Facteurs clé du succès</h3></div><p>Expertise technique, réactivité, transparence des rapports, tarifs accessibles aux PME, formation continue des équipes et partenariats avec des cabinets comptables et intégrateurs.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">F</span><h3>Calendrier de réalisation</h3></div><ul class="tl">
+      <li><b>M1 – M2 · Études et dossier</b><span>Finalisation du business plan, choix juridique, dossier bancaire</span></li>
+      <li><b>M3 · Création et financement</b><span>Immatriculation, compte bancaire, emprunt et subvention</span></li>
+      <li><b>M4 – M5 · Local et équipements</b><span>Travaux, mobilier, serveurs, réseau, licences</span></li>
+      <li><b>M4 – M7 · Plateforme</b><span>Application web, base de données, test des trois rôles</span></li>
+      <li><b>M6 – M7 · Équipe</b><span>Recrutement et montée en compétences</span></li>
+      <li><b>M8 · Lancement commercial</b><span>Site web, campagnes, prospection</span></li>
+      <li><b>M9 – M12 · Premiers contrats</b><span>10 clients actifs et premier bilan</span></li>
+    </ul></div>
+    <div class="item"><div class="item-h"><span class="letter">G</span><h3>Réglementation du secteur</h3></div><p>Respect de la législation tunisienne sur la protection des données personnelles, contrats de confidentialité avec les clients, journalisation des accès et certifications visées (Security+, CEH, CISSP). Les rapports d'audit sont conservés et tracés.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">H</span><h3>Concours des fonds spéciaux</h3></div><p>Une <b>subvention de 20 000 DT</b> est prévue au titre des programmes d'accompagnement des jeunes entreprises, complétée par un emprunt bancaire de 40 000 DT avec différé de remboursement de six mois.</p></div>
+  </section>
+
+  <!-- III -->
+  <section class="chapter" id="ch3">
+    <div class="ch-head"><div class="rnum">III</div><div><h2>LE PROMOTEUR ET L'ÉQUIPE DIRIGEANTE</h2><p>Les deux personnes derrière CyberShield.</p></div></div>
+    <div class="grid2">
+      <div class="item"><div class="item-h"><span class="letter">SH</span><h3>Siwar Hbibi</h3></div><p><b>Rôle :</b> co-fondatrice, directrice générale, administratrice de la plateforme (rôle Admin).<br><b>Responsabilités :</b> stratégie, gestion financière, relations clients, pilotage des comptes, des appareils et des rapports.</p></div>
+      <div class="item"><div class="item-h"><span class="letter">MM</span><h3>Marwa Mejri</h3></div><p><b>Rôle :</b> co-fondatrice, responsable technique, technicienne senior (rôle Technicien).<br><b>Responsabilités :</b> audits, tests d'intrusion, analyse des alertes, interventions et rédaction des rapports.</p></div>
+    </div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Situation personnelle</h3></div><p>Étudiantes en classe <b>2TSGI 2</b>, les deux fondatrices transforment un projet d'étude en entreprise réelle. Elles occupent les postes de direction tout en participant directement à la production.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Bilan personnel</h3></div><p>Siwar apporte une expérience en gestion, finance et relation client. Marwa apporte l'expertise technique et terrain. Leur complémentarité couvre à la fois le pilotage et la production.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Compétences</h3></div><div class="grid2">
+      <p><b>Siwar :</b> management, budgétisation, commercial, administration système et gestion des comptes.</p>
+      <p><b>Marwa :</b> réseaux, pentest, SIEM, analyse de vulnérabilités, rédaction de rapports.</p>
+    </div></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Réseau utile au projet</h3></div><p>Établissements d'enseignement supérieur pour le recrutement, cabinets comptables et avocats pour la conformité, intégrateurs informatiques pour les partenariats commerciaux.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Équipe projet</h3></div><div class="table-wrap"><table><thead><tr><th>Poste</th><th>Effectif</th><th class="r">Coût mensuel chargé</th></tr></thead><tbody>
+      <tr><td>Directrice générale (Siwar)</td><td>1</td><td class="r">4 500 DT</td></tr>
+      <tr><td>Responsable technique (Marwa)</td><td>1</td><td class="r">4 500 DT</td></tr>
+      <tr><td>Techniciens réseau &amp; sécurité</td><td>2</td><td class="r">7 000 DT</td></tr>
+      <tr><td>Analyste SOC</td><td>1</td><td class="r">3 800 DT</td></tr>
+      <tr><td>Consultant conformité (vacataire)</td><td>1</td><td class="r">1 200 DT</td></tr>
+      <tr><td>Comptabilité externalisée</td><td>1</td><td class="r">800 DT</td></tr>
+      <tr><td><b>Total</b></td><td><b>7</b></td><td class="r"><b>~21 800 DT</b></td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">F</span><h3>Choix de la forme juridique</h3></div><p>La <b>SARL</b> est retenue : responsabilité limitée aux apports, structure adaptée à une petite équipe, gestion simple et crédibilité vis-à-vis des clients professionnels et de la banque.</p></div>
+  </section>
+
+  <!-- IV -->
+  <section class="chapter" id="ch4">
+    <div class="ch-head"><div class="rnum">IV</div><div><h2>ANALYSE STRATÉGIQUE DU MARCHÉ</h2><p>Le secteur, les clients, la concurrence et les risques.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Présentation du secteur</h3></div><p>La cybersécurité en Tunisie est un marché en croissance : digitalisation rapide des PME, obligations de conformité et multiplication des attaques (ransomware, phishing, fuites de données). L'offre locale reste concentrée sur la maintenance informatique plutôt que sur la sécurité offensive et la détection.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Marché potentiel</h3></div><div class="table-wrap"><table><thead><tr><th>Segment</th><th>Besoin principal</th><th class="r">Potentiel estimé</th></tr></thead><tbody>
+      <tr><td>PME (10 – 100 postes)</td><td>Audit, EDR, sauvegardes</td><td class="r">~6 000 entreprises</td></tr>
+      <tr><td>Banques &amp; assurances</td><td>Conformité, pentest, SOC</td><td class="r">~50 structures</td></tr>
+      <tr><td>Santé &amp; laboratoires</td><td>Protection des données patients</td><td class="r">~200 structures</td></tr>
+      <tr><td>Logistique &amp; industrie</td><td>Sécurité des réseaux IT</td><td class="r">~400 structures</td></tr>
+      <tr><td>Administrations &amp; universités</td><td>Conformité, formation</td><td class="r">~200 structures</td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Marché cible</h3></div><p>Direction générale ou responsable informatique d'une PME de <b>20 à 80 salariés</b>, avec un budget sécurité annuel de <b>8 000 à 40 000 DT</b>.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Analyse de l'offre et de la concurrence</h3></div><div class="table-wrap"><table><thead><tr><th>Type</th><th>Forces</th><th>Faiblesse exploitée</th></tr></thead><tbody>
+      <tr><td>Intégrateurs locaux</td><td>Proximité, connaissance du terrain</td><td>Peu d'expertise offensive / SOC</td></tr>
+      <tr><td>Cabinets internationaux</td><td>Méthodes éprouvées, marque</td><td>Coût élevé, peu d'accompagnement local</td></tr>
+      <tr><td>Freelances</td><td>Prix bas</td><td>Pas de garantie ni de continuité</td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Analyse S.W.O.T (EFFOM) et gestion du risque</h3></div>
+      <div class="swot">
+        <div class="s"><h4>Forces</h4><ul><li>Offre sécurité dédiée</li><li>Portail client transparent</li><li>Équipe locale et réactive</li></ul></div>
+        <div class="w"><h4>Faiblesses</h4><ul><li>Jeune structure, notoriété à construire</li><li>Capacité de production limitée</li></ul></div>
+        <div class="o"><h4>Opportunités</h4><ul><li>Conformité et digitalisation</li><li>Pénurie de profils cyber</li><li>Partenariats possibles</li></ul></div>
+        <div class="t"><h4>Menaces</h4><ul><li>Concurrence par les prix</li><li>Retards de paiement</li><li>Évolution réglementaire</li></ul></div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Risque</th><th>Impact</th><th>Mesure</th></tr></thead><tbody>
+        <tr><td>Recrutement d'experts</td><td>Fort</td><td>Formation interne, vacatariat, universités</td></tr>
+        <tr><td>Cyberattaque contre CyberShield</td><td>Fort</td><td>EDR interne, sauvegardes, plan de réponse</td></tr>
+        <tr><td>Retard de paiement</td><td>Moyen</td><td>Acompte 40 %, facturation à 30 jours</td></tr>
+        <tr><td>Dépendance à gros clients</td><td>Fort</td><td>Au moins 15 clients actifs dès l'année 2</td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- V -->
+  <section class="chapter" id="ch5">
+    <div class="ch-head"><div class="rnum">V</div><div><h2>STRATÉGIE DE COMMERCIALISATION</h2><p>Comment trouver et garder les clients.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Objectif part de marché – prévisions des ventes</h3></div><p>Objectif : <b>10 clients</b> en année 1, <b>20</b> en année 2 et <b>30</b> en année 3, soit environ 2 % du marché cible. Chiffre d'affaires : <b>420 000 DT</b>, <b>600 000 DT</b> puis <b>820 000 DT</b>.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Stratégies de Marketing</h3></div><p>Différenciation par la transparence et la proximité. Offres groupées : <b>Pack PME</b> (audit + EDR + surveillance) à 4 500 DT/mois et <b>Pack conformité</b> à 5 000 DT. Remise de 10 % pour les contrats annuels réglés d'avance.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Communication</h3></div><div class="table-wrap"><table><thead><tr><th>Canal</th><th>Action</th><th class="r">Budget annuel</th></tr></thead><tbody>
+      <tr><td>Site &amp; référencement</td><td>SEO, contenus techniques, blog</td><td class="r">6 000 DT</td></tr>
+      <tr><td>Réseaux sociaux</td><td>Publications techniques hebdomadaires</td><td class="r">2 400 DT</td></tr>
+      <tr><td>Campagnes ciblées</td><td>Mots-clés « cybersécurité Tunisie »</td><td class="r">6 000 DT</td></tr>
+      <tr><td>Salons &amp; événements</td><td>Tunis Cyber Security Forum, meetups</td><td class="r">5 000 DT</td></tr>
+      <tr><td>Partenariats</td><td>Commissions cabinets comptables/avocats</td><td class="r">3 000 DT</td></tr>
+      <tr><td>Plaquettes</td><td>Impression et supports commerciaux</td><td class="r">2 000 DT</td></tr>
+      <tr><td><b>Total</b></td><td></td><td class="r"><b>24 400 DT</b></td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Canaux de distribution</h3></div><p>Vente directe (rencontres et devis), partenariats avec intégrateurs et cabinets professionnels, génération de leads via le site web et la démo interactive, présence sur les salons et événements du secteur.</p></div>
+  </section>
+
+  <!-- VI -->
+  <section class="chapter" id="ch6">
+    <div class="ch-head"><div class="rnum">VI</div><div><h2>PLAN DE PRODUCTION ET D'ORGANISATION</h2><p>Comment le service est produit et organisé.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Processus de production – prestation de service et immobilisations</h3></div><p>Le client dépose une demande → l'admin planifie et assigne → le technicien intervient et note → un rapport est rédigé et rendu visible. Les immobilisations (serveurs, postes, switch, pare-feu) sont listées ci-dessous.</p>
+      <div class="table-wrap"><table><thead><tr><th>Équipement</th><th>Qté</th><th class="r">Total</th></tr></thead><tbody>
+        <tr><td>Serveurs (RAID, 32 Go)</td><td>2</td><td class="r">18 000 DT</td></tr>
+        <tr><td>Postes techniques</td><td>5</td><td class="r">16 000 DT</td></tr>
+        <tr><td>Switchs gigabit</td><td>2</td><td class="r">3 000 DT</td></tr>
+        <tr><td>Pare-feu UTM</td><td>1</td><td class="r">5 000 DT</td></tr>
+        <tr><td>Licences SIEM &amp; EDR</td><td>1 lot</td><td class="r">8 000 DT</td></tr>
+        <tr><td><b>Total équipements</b></td><td></td><td class="r"><b>61 000 DT</b></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Capacité de production</h3></div><p><b>12 interventions traitées par mois</b> en année 1, <b>25</b> en année 2 et <b>35</b> en année 3. La surveillance SOC couvre 6 clients en régime de croisière.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Approvisionnement</h3></div><p>CyberShield est une entreprise de <b>prestations de service</b>, pas une manufacture. Les achats concernent le matériel informatique, les licences logicielles et l'hébergement cloud, auprès de fournisseurs locaux et d'éditeurs internationaux.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Main d'œuvre</h3></div><p>Effectif prévu : 7 personnes (direction, responsable technique, 2 techniciens, analyste SOC, consultant conformité vacataire, comptabilité externalisée), soit environ <b>21 800 DT/mois</b> de charges de personnel.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Local – Implantation</h3></div><p><b>Centre Urbain, Tunis</b> — 80 m² répartis en accueil et salle de réunion (18 m²), open-space technique (30 m²), salle serveur/SOC (12 m²), bureau direction (14 m²) et archives (6 m²).</p></div>
+    <div class="item"><div class="item-h"><span class="letter">F</span><h3>Aménagements</h3></div><p>Budget <b>18 000 DT</b> : mobilier 9 000 DT, éclairage et cloisons 4 000 DT, signalétique et logo mural 3 000 DT, végétalisation et divers 2 000 DT. Charte visuelle navy, bleu foncé et cyan.</p></div>
+  </section>
+
+  <!-- VII -->
+  <section class="chapter" id="ch7">
+    <div class="ch-head"><div class="rnum">VII</div><div><h2>PLAN FINANCIER</h2><p>Les chiffres du projet sur trois ans.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Coût et financement du projet</h3></div><div class="grid2">
+      <div class="table-wrap"><table><thead><tr><th>Besoins</th><th class="r">Montant</th></tr></thead><tbody>
+        <tr><td>Équipements informatiques</td><td class="r">61 000 DT</td></tr>
+        <tr><td>Travaux et aménagement</td><td class="r">15 000 DT</td></tr>
+        <tr><td>Mobilier et décoration</td><td class="r">18 000 DT</td></tr>
+        <tr><td>Licences complémentaires</td><td class="r">8 000 DT</td></tr>
+        <tr><td>Identité, site, communication</td><td class="r">8 000 DT</td></tr>
+        <tr><td>Frais juridiques</td><td class="r">4 000 DT</td></tr>
+        <tr><td>Fonds de roulement</td><td class="r">6 000 DT</td></tr>
+        <tr><td><b>Total</b></td><td class="r"><b>120 000 DT</b></td></tr>
+      </tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Ressources</th><th class="r">Montant</th></tr></thead><tbody>
+        <tr><td>Apports personnels</td><td class="r">60 000 DT</td></tr>
+        <tr><td>Emprunt bancaire (5 ans)</td><td class="r">40 000 DT</td></tr>
+        <tr><td>Subvention jeunes entreprises</td><td class="r">20 000 DT</td></tr>
+        <tr><td><b>Total</b></td><td class="r"><b>120 000 DT</b></td></tr>
+      </tbody></table></div>
+    </div></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Hypothèses de base ayant servi à l'élaboration des prévisions</h3></div><p>Tarifs maintenus, montée en charge progressive, taux de marge sur contributions de <b>85 %</b>, charges fixes mensuelles d'environ <b>30 000 DT</b>, impôt sur les sociétés de <b>15 %</b> et amortissements de 12 000 DT/an. Les chiffres sont des estimations pédagogiques.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">C</span><h3>Chiffre d'affaires</h3></div><div class="table-wrap"><table><thead><tr><th>Service</th><th>Volume/mois</th><th class="r">CA mensuel</th></tr></thead><tbody>
+      <tr><td>Audit de sécurité</td><td>4</td><td class="r">10 000 DT</td></tr>
+      <tr><td>Test de pénétration</td><td>3</td><td class="r">10 500 DT</td></tr>
+      <tr><td>Surveillance SOC</td><td>6 clients</td><td class="r">10 800 DT</td></tr>
+      <tr><td>Gestion des incidents</td><td>5</td><td class="r">6 000 DT</td></tr>
+      <tr><td>Conformité RGPD</td><td>2</td><td class="r">4 000 DT</td></tr>
+      <tr><td>Formation</td><td>4</td><td class="r">3 600 DT</td></tr>
+      <tr><td><b>Total</b></td><td></td><td class="r"><b>44 900 DT</b></td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">D</span><h3>Dotations aux amortissements</h3></div><p><b>12 000 DT par an</b> pour le matériel et les immobilisations (environ 102 000 DT bruts amortis sur 8 ans).</p></div>
+    <div class="item"><div class="item-h"><span class="letter">E</span><h3>Estimation des charges d'exploitation</h3></div><div class="table-wrap"><table><thead><tr><th>Charge mensuelle</th><th class="r">Montant</th></tr></thead><tbody>
+      <tr><td>Salaires et charges sociales</td><td class="r">21 000 DT</td></tr>
+      <tr><td>Loyer et charges locatives</td><td class="r">3 000 DT</td></tr>
+      <tr><td>Logiciels, cloud, télécoms</td><td class="r">2 500 DT</td></tr>
+      <tr><td>Marketing</td><td class="r">1 500 DT</td></tr>
+      <tr><td>Déplacements et interventions</td><td class="r">1 200 DT</td></tr>
+      <tr><td>Divers et administration</td><td class="r">800 DT</td></tr>
+      <tr><td><b>Total</b></td><td class="r"><b>~30 000 DT</b></td></tr>
+    </tbody></table></div></div>
+    <div class="item hl"><div class="item-h"><span class="letter">F</span><h3>Seuil de rentabilité</h3></div><p><b>CA de seuil ≈ 35 300 DT / mois</b> (30 000 DT de charges fixes ÷ 0,85 de marge sur contributions). Le CA de régime (44 900 DT) laisse une marge de sécurité d'environ <b>27 %</b>.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">G</span><h3>Estimation du besoin en fonds de roulement d'exploitation</h3></div><p>BFR estimé à <b>~25 000 DT</b> (créances clients et faibles stocks, déduction faite des dettes fournisseurs). Il est couvert par le fonds de roulement initial intégré au plan de financement et par les encaissements clients à 30 jours.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">H</span><h3>Compte de résultat prévisionnel</h3></div><div class="table-wrap"><table><thead><tr><th>DT</th><th class="r">Année 1</th><th class="r">Année 2</th><th class="r">Année 3</th></tr></thead><tbody>
+      <tr><td><b>Chiffre d'affaires</b></td><td class="r">420 000</td><td class="r">600 000</td><td class="r">820 000</td></tr>
+      <tr><td>Total charges</td><td class="r">370 000</td><td class="r">405 000</td><td class="r">468 000</td></tr>
+      <tr><td><b>Résultat avant impôt</b></td><td class="r">50 000</td><td class="r">195 000</td><td class="r">352 000</td></tr>
+      <tr><td>Impôt (15 %)</td><td class="r">7 500</td><td class="r">29 250</td><td class="r">52 800</td></tr>
+      <tr><td><b>Résultat net</b></td><td class="r"><b>42 500</b></td><td class="r"><b>165 750</b></td><td class="r"><b>299 200</b></td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">I</span><h3>Valeur ajoutée et taux de croissance</h3></div><div class="table-wrap"><table><thead><tr><th>DT</th><th class="r">Année 1</th><th class="r">Année 2</th><th class="r">Année 3</th></tr></thead><tbody>
+      <tr><td>Valeur ajoutée estimée</td><td class="r">300 000</td><td class="r">465 000</td><td class="r">662 000</td></tr>
+      <tr><td>Croissance du CA</td><td class="r">—</td><td class="r">+42,9 %</td><td class="r">+36,7 %</td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">J</span><h3>Plan de trésorerie</h3></div><div class="table-wrap"><table><thead><tr><th>Trimestre</th><th class="r">Encaissements</th><th class="r">Décaissements</th><th class="r">Solde</th></tr></thead><tbody>
+      <tr><td>T1</td><td class="r">60 000</td><td class="r">90 000</td><td class="r">-30 000</td></tr>
+      <tr><td>T2</td><td class="r">90 000</td><td class="r">92 000</td><td class="r">-2 000</td></tr>
+      <tr><td>T3</td><td class="r">120 000</td><td class="r">95 000</td><td class="r">+25 000</td></tr>
+      <tr><td>T4</td><td class="r">150 000</td><td class="r">98 000</td><td class="r">+52 000</td></tr>
+      <tr><td><b>Total année 1</b></td><td class="r"><b>420 000</b></td><td class="r"><b>375 000</b></td><td class="r"><b>+45 000</b></td></tr>
+    </tbody></table></div><p class="note">Un découvert autorisé de 30 000 DT couvre le démarrage négatif des deux premiers trimestres.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">K</span><h3>Ratios de rentabilité TRI et VAN</h3></div><p><b>VAN ≈ 310 000 DT</b> (actualisation à 10 %) et <b>TRI ≈ 92 %</b> sur trois ans, avec des flux de trésorerie actualisés de 54 500 DT, 177 750 DT et 311 200 DT. <span class="note">Estimations pédagogiques à confirmer par un tableau de trésorerie réel.</span></p></div>
+    <div class="item"><div class="item-h"><span class="letter">L</span><h3>Bilans prévisionnels (simplifiés, DT)</h3></div><div class="table-wrap"><table><thead><tr><th>Poste</th><th class="r">Année 1</th><th class="r">Année 2</th><th class="r">Année 3</th></tr></thead><tbody>
+      <tr><td>Immobilisations nettes</td><td class="r">90 000</td><td class="r">78 000</td><td class="r">66 000</td></tr>
+      <tr><td>Créances clients</td><td class="r">35 000</td><td class="r">50 000</td><td class="r">68 000</td></tr>
+      <tr><td>Trésorerie</td><td class="r">79 500</td><td class="r">236 250</td><td class="r">524 450</td></tr>
+      <tr><td><b>Total actif</b></td><td class="r"><b>204 500</b></td><td class="r"><b>364 250</b></td><td class="r"><b>658 450</b></td></tr>
+      <tr><td>Capital + résultats cumulés</td><td class="r">162 500</td><td class="r">328 250</td><td class="r">627 450</td></tr>
+      <tr><td>Emprunt restant dû</td><td class="r">32 000</td><td class="r">24 000</td><td class="r">16 000</td></tr>
+      <tr><td>Fournisseurs</td><td class="r">10 000</td><td class="r">12 000</td><td class="r">15 000</td></tr>
+      <tr><td><b>Total passif</b></td><td class="r"><b>204 500</b></td><td class="r"><b>364 250</b></td><td class="r"><b>658 450</b></td></tr>
+    </tbody></table></div><p class="note">La trésorerie est le poste d'ajustement du bilan.</p></div>
+    <div class="item"><div class="item-h"><span class="letter">M</span><h3>Autres ratios de rentabilité</h3></div><div class="table-wrap"><table><thead><tr><th>Ratio</th><th class="r">Année 1</th><th class="r">Année 2</th><th class="r">Année 3</th></tr></thead><tbody>
+      <tr><td>Marge nette</td><td class="r">10,1 %</td><td class="r">27,6 %</td><td class="r">36,5 %</td></tr>
+      <tr><td>Endettement / fonds propres</td><td class="r">25,8 %</td><td class="r">11,0 %</td><td class="r">4,9 %</td></tr>
+      <tr><td>Rotation de l'actif</td><td class="r">2,05</td><td class="r">1,65</td><td class="r">1,25</td></tr>
+    </tbody></table></div></div>
+  </section>
+
+  <!-- VIII -->
+  <section class="chapter" id="ch8">
+    <div class="ch-head"><div class="rnum">VIII</div><div><h2>CONCLUSIONS</h2><p>Le projet en une dernière page.</p></div></div>
+    <div class="item hl"><p>CyberShield réunit <b>une expertise technique réelle</b>, <b>une offre adaptée au tissu économique tunisien</b> et <b>un outil numérique qui rend la sécurité visible</b>. Porté par <b>Siwar Hbibi</b> et <b>Marwa Mejri</b> (classe 2TSGI 2), le projet répond à un besoin concret et atteint son seuil de rentabilité dès la fin de la première année.</p>
+    <p>La prochaine étape est la concrétisation juridique de la société et la signature des trois premiers contrats de surveillance, qui serviront de références. Le suivi des indicateurs (clients actifs, délai de prise en charge, taux de résolution, satisfaction) permettra d'ajuster l'offre et de viser l'ouverture d'un second pôle à l'horizon 2029.</p></div>
+  </section>
+
+  <!-- IX -->
+  <section class="chapter" id="ch9">
+    <div class="ch-head"><div class="rnum">IX</div><div><h2>ANNEXES</h2><p>Les fichiers et les accès de démonstration.</p></div></div>
+    <div class="item"><div class="item-h"><span class="letter">A</span><h3>Fichiers du projet</h3></div><div class="table-wrap"><table><thead><tr><th>Fichier</th><th>Contenu</th></tr></thead><tbody>
+      <tr><td><b>README.md</b></td><td>Installation XAMPP, déploiement Render, comptes de démonstration</td></tr>
+      <tr><td><b>BUSINESS_PLAN.md</b></td><td>Business plan détaillé, source des chiffres de cette présentation</td></tr>
+      <tr><td><b>presentation.html</b></td><td>Cette présentation, imprimable en PDF</td></tr>
+      <tr><td><b>landing.html</b></td><td>Page d'accueil publique du projet</td></tr>
+      <tr><td><b>cybershield/</b></td><td>Application PHP/MySQL (8 tables, CRUD, trois rôles)</td></tr>
+      <tr><td><b>demo/</b></td><td>Démo interactive sans installation</td></tr>
+      <tr><td><b>Dockerfile</b></td><td>Déploiement Docker / Render</td></tr>
+    </tbody></table></div></div>
+    <div class="item"><div class="item-h"><span class="letter">B</span><h3>Comptes de démonstration</h3></div><div class="table-wrap"><table><thead><tr><th>Rôle</th><th>E-mail</th><th>Mot de passe</th></tr></thead><tbody>
+      <tr><td>Admin (Siwar)</td><td>admin@cybershield.tn</td><td>Admin123!</td></tr>
+      <tr><td>Technicien (Marwa)</td><td>tech@cybershield.tn</td><td>Tech123!</td></tr>
+      <tr><td>Client</td><td>client@cybershield.tn</td><td>Client123!</td></tr>
+    </tbody></table></div></div>
+  </section>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">CyberShield · Siwar Hbibi &amp; Marwa Mejri · Classe 2TSGI 2 · Centre Urbain, Tunis, Tunisie</div>
+</footer>
+
+<script>
+// Met en surbrillance le chapitre visible dans le sommaire
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.side a'));
+  var sections = links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  function update(){
+    var y = window.scrollY + 140, current = sections[0];
+    sections.forEach(function(s){ if(s.offsetTop <= y) current = s; });
+    links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + current.id); });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body>
+</html>
