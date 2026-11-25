@@ -11,6 +11,7 @@ Application web complète (PHP + MySQL) avec une démo interactive autonome en H
 ```
 revoke/
 ├── landing.html                 ← Landing page claire et autonome (à ouvrir directement)
+├── presentation.html            ← Présentation du plan d'affaires (modèle Chapitre 5, imprimable PDF)
 ├── README.md                    ← Ce guide
 ├── BUSINESS_PLAN.md             ← Business plan complet (idée, financement, local, équipe, budget, prévisions…)
 ├── cybershield/                 ← Application PHP/MySQL (à placer dans htdocs/)
