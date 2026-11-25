@@ -2,13 +2,11 @@
 # L'application PHP tourne avec Apache et utilise database.sqlite fournie.
 FROM php:8.2-apache
 
-# libsqlite3-dev fournit sqlite3.pc, requis pour compiler pdo_sqlite
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        libsqlite3-dev pkg-config \
+# libsqlite3-dev fournit sqlite3.pc, requis par pdo_sqlite.
+# PDO est déjà présent dans l'image : on n'installe que les drivers.
+RUN apt-get update && apt-get install -y --no-install-recommends libsqlite3-dev \
+    && docker-php-ext-install pdo_mysql pdo_sqlite \
     && rm -rf /var/lib/apt/lists/*
-
-# PDO SQLite (mode par défaut) + PDO MySQL (si une base externe est fournie)
-RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite
 
 # Base SQLite hors de la racine web (pas téléchargeable par un visiteur)
 RUN mkdir -p /var/www/data && chown www-data:www-data /var/www/data
