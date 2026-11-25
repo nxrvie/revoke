@@ -167,7 +167,8 @@ function crud_render(array $cfg): void
                     <?php foreach ($rows as $r): ?>
                         <tr>
                             <?php foreach ($cfg['columns'] as $c):
-                                $key = $c['alias'] ?? basename($c['col']);
+                                $col = $c['col'];
+                                $key = $c['alias'] ?? (strpos($col, '.') !== false ? substr($col, strrpos($col, '.') + 1) : $col);
                                 $v = $r[$key] ?? '';
                                 $type = $c['type'] ?? 'text';
                                 if ($type === 'badge') $out = badge($v);
